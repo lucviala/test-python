@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  server:
+    container_name: server
+    build: .
+
+  socks:
+    image: ghcr.io/httptoolkit/docker-socks-tunnel:latest
+    container_name: proxy-socks
+    ports:
+      - "127.0.0.1:1080:1080"
